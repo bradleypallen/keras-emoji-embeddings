@@ -1,2 +1,5 @@
 .DS_Store
-glove.6B/*
+.ipynb_checkpoints
+glove.6B.300d.txt
+weights.h5
+emoji_joined.txt
