@@ -23,7 +23,11 @@ Although the approach taken to generating embeddings is based on that taken in t
 * Following a suggestion by Eisner [[3]](#eisner-personal-communication), we use a bidirectional GRU to compute a 300-dimensional embedding for the emoji description, as opposed to the paper's straightforward summation of the embeddings of the constituent terms.
 * Instead of taking the sigmoid of the dot product of the emoji and description embeddings, we instead concatenate them into a 600-dimensional vector and then pass that up through several densely-connected layers to a 2-dimensional softmax layer.
 
-The architecture takes a good deal of inspiration from the emerging architectural patterns in deep learning for natural language inference, e.g. as described in [[4]](https://arxiv.org/abs/1607.04853v2) and [[5]](https://explosion.ai/blog/deep-learning-formula-nlp). The motivation for the differences is that we hope to exploit these architectural patterns to create embeddings for terms from controlled vocabularies, where descriptions will be longer than those associated with Unicode emoji.
+The model architecture is shown below:
+
+![[Keras architecture for Unicode emoji embedding generation]](emoji_emb_arch.png)
+
+This architecture takes a good deal of inspiration from the emerging architectural patterns in deep learning for natural language inference, e.g. as described in [[4]](https://arxiv.org/abs/1607.04853v2) and [[5]](https://explosion.ai/blog/deep-learning-formula-nlp). The motivation for the differences is that we hope to exploit these architectural patterns to create embeddings for terms from controlled vocabularies, where descriptions will be longer than those associated with Unicode emoji.
 
 ## Results
 
