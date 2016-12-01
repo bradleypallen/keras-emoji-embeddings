@@ -22,13 +22,13 @@ Although the approach taken to generating embeddings is based on that taken in t
 
 * We use GloVe [[2]](http://nlp.stanford.edu/pubs/glove.pdf) (specifically, the 300-dimensional version of the 6-billion tokens derived by crawling Wikipedia 2014 and Gigaword 5, provided as glove.6b.300d.txt) as the source of fixed word embeddings, as opposed to the 300-dimensional Google News word2vec embeddings used in [[1]](https://arxiv.org/abs/1609.08359).
 * Following a suggestion by Eisner [[3]](#eisner-personal-communication), we use a bidirectional GRU to compute a 300-dimensional embedding for the emoji description, as opposed to the paper's straightforward summation of the embeddings of the constituent terms.
-* Instead of taking the sigmoid of the dot product of the emoji and description embeddings, we instead concatenate them into a 600-dimensional vector and then pass that up through several densely-connected layers to a 2-dimensional softmax layer.
+* Instead of taking the sigmoid of the dot product of the emoji and description embeddings, we instead concatenate them into a 600-dimensional vector and then pass that up through several densely-connected layers to a 2-dimensional softmax layer. The downside of this is the additional time taken in training relative to that reported for the implementation in [[1]](https://arxiv.org/abs/1609.08359).
 
 The model architecture is shown below:
 
 ![[Keras architecture for Unicode emoji embedding generation]](emoji_emb_arch.png)
 
-This architecture takes a good deal of inspiration from the emerging architectural patterns in deep learning for natural language inference, e.g. as described in [[4]](https://arxiv.org/abs/1607.04853v2) and [[5]](https://explosion.ai/blog/deep-learning-formula-nlp). The motivation for the differences is that we hope to exploit these architectural patterns to create embeddings for terms from controlled vocabularies, where descriptions will be longer than those associated with Unicode emoji. The downside is the additional time taken in training relative to the fast implementation in [[1]](https://arxiv.org/abs/1609.08359).
+This architecture takes a good deal of inspiration from the emerging architectural patterns in deep learning for natural language inference, e.g. as described in [[4]](https://arxiv.org/abs/1607.04853v2) and [[5]](https://explosion.ai/blog/deep-learning-formula-nlp). We hope to exploit these architectural patterns to create embeddings for terms from controlled vocabularies, where descriptions will be longer than those associated with Unicode emoji.
 
 ## Results
 
