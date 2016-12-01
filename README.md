@@ -10,6 +10,7 @@ A Jupyter notebook that implements an approach to generating embeddings for Unic
 
 * numpy 1.11.1
 * pandas 0.18.1
+* matplotlib 1.5.3
 * Keras 1.1.2
 * scikit-learn 0.17.1
 * h5py 2.6.0
@@ -27,7 +28,7 @@ The model architecture is shown below:
 
 ![[Keras architecture for Unicode emoji embedding generation]](emoji_emb_arch.png)
 
-This architecture takes a good deal of inspiration from the emerging architectural patterns in deep learning for natural language inference, e.g. as described in [[4]](https://arxiv.org/abs/1607.04853v2) and [[5]](https://explosion.ai/blog/deep-learning-formula-nlp). The motivation for the differences is that we hope to exploit these architectural patterns to create embeddings for terms from controlled vocabularies, where descriptions will be longer than those associated with Unicode emoji.
+This architecture takes a good deal of inspiration from the emerging architectural patterns in deep learning for natural language inference, e.g. as described in [[4]](https://arxiv.org/abs/1607.04853v2) and [[5]](https://explosion.ai/blog/deep-learning-formula-nlp). The motivation for the differences is that we hope to exploit these architectural patterns to create embeddings for terms from controlled vocabularies, where descriptions will be longer than those associated with Unicode emoji. The downside is the additional time taken in training relative to the fast implementation in [[1]](https://arxiv.org/abs/1609.08359).
 
 ## Results
 
