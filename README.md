@@ -27,7 +27,9 @@ The architecture takes a good deal of inspiration from the emerging architectura
 
 ## Results
 
-Interestingly, in spite of the differences described above, a t-SNE visualization of the computed embeddings shows similar clustering to the visualization shown in [[1]](https://arxiv.org/abs/1609.08359).
+Interestingly, in spite of the differences described above, a t-SNE visualization of the computed embeddings shows similar clustering to the visualization puplished in [[1]](https://arxiv.org/abs/1609.08359):
+
+![[A t-SNE visualization of the computed embeddings]](emoji_emb_viz.png)
 
 ## Usage
 
