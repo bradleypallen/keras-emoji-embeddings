@@ -28,7 +28,7 @@ The Keras model architecture is shown below:
 
 ![[Keras architecture for Unicode emoji embedding generation]](emoji_emb_arch.png)
 
-The model uses categorical cross-entropy as a loss function and uses Adam for optimization. We run training for 80 epochs and then take the weights from the emoji embedding layer of the model checkpoint with the maximum categorical accuracy.
+The model uses categorical cross-entropy as a loss function and uses Adam for optimization. We run training for 80 epochs and then save the weights from the emoji embedding layer of the model checkpoint with the maximum categorical accuracy.
 
 This architecture takes a good deal of inspiration from the emerging architectural patterns in deep learning for natural language inference, e.g. as described in [[4]](https://arxiv.org/abs/1607.04853v2) and [[5]](https://explosion.ai/blog/deep-learning-formula-nlp). We hope to exploit these architectural patterns to create embeddings for terms from controlled vocabularies, where descriptions will be longer than those associated with Unicode emoji.
 
